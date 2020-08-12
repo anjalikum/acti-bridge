@@ -1,5 +1,4 @@
 Inspiration
-
 As a result of the recent events in 2020, including but not limited to the COVID-19 pandemic, Yemen humanitarian crisis, and the Black Lives Matter movement, we wanted to provide people with an option to educate themselves and support others across the nation and across the world. We help users find petitions to sign, organizations to support, and causes from all over the world to learn about and make it easy for them to take action.
 
 
