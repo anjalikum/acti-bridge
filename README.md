@@ -1,10 +1,13 @@
 Inspiration
+
 As a result of the recent events in 2020, including but not limited to the COVID-19 pandemic, Yemen humanitarian crisis, and the Black Lives Matter movement, we wanted to provide people with an option to educate themselves and support others across the nation and across the world. We help users find petitions to sign, organizations to support, and causes from all over the world to learn about and make it easy for them to take action.
+
 
 
 What it does
 
 ActiBridge is a website that will allow its users to bridge the gap between activism and ignorance and take action with movements they care about. Users can take a quiz that will personalize their results and show them various causes they can support, petitions they can side, and organizations to which they can donate. In addition, they can select their representative, and ActiBridge will automatically create and format an email for them to send.
+
 
 
 How I built it
