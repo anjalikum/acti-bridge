@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+
+    <title>ActiBridge</title>
+     <div class="topimg">
+      <img src="https://cdn.glitch.com/e0502230-dddd-467a-97fd-afee8c1549e2%2FActiBridge_Logo.png?v=1593896410502" alt="" />
+    </div>
+    <!--navbar html-->
+    <div class="container blue circleBehind">
+      <a href="index.html">HOME</a>
+      <a href="learn.html">LEARN</a>
+      <a href="matchup.html">MATCH UP</a>
+      <a href="outreach.html">OUTREACH</a>
+      <a href="donate.html"> DONATE</a>
+      <a href="preferences.html">PREFERENCES</a>
+      <a href="aboutus.html">ABOUT US</a>
+    </div>
+
+    
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/navbarstyle.css" />
+     <link rel="stylesheet" href="/joinbutton.css" />
+    <link rel="stylesheet" href="/quiz.css" />
+    
+    
+  </head>
+  
+  <body>
+    <div class="green2">
+    <h1 style = "text-align: center; display: block; margin-right: auto; margin-left: auto; color:white ">
+      ACTIBRIDGE QUIZ
+    </h1>
+    
+   <form>
+     
+    <div style = "width: 30%;">
+      <input placeholder = "Enter Zipcode" type = "text" name = "zip" id = "userZipCode"/>
+    </div>
+     <div class = "spacing">
+       <h3 style = "color:white;">
+          Check what you are interested in! 
+       </h3>
+       
+         
+       
+       <input type = "checkbox" name = "ar" id = "ar" value = "ar"/>
+       <label for="ar" color: white> Animal Rights</label><br>
+       <input type = "checkbox" name = "ct" id = "ct" value = "ar"/>
+       <label for="ct" color: white> Child Trafficking</label><br>
+       <input type = "checkbox" name = "di" id = "di" />
+       <label for="di" color: white> Disabilities</label><br>
+       <input type = "checkbox" name = "ha" id = "ha" />
+       <label for="ha" color: white> HIV/AIDS</label><br>
+       <input type = "checkbox" name = "mt" id = "mt"/>
+       <label for="mt" color: white> #MeToo</label><br>
+       <input type = "checkbox" name = "bhr" id = "bhr" />
+       <label for="bhr" color: white> BokoHaram Refugees</label><br>
+       <input type = "checkbox" name = "cc" id = "cc"/>
+       <label for="cc" color: white> Climate Change</label><br>
+       <input type = "checkbox" name = "ed" id = "ed" />
+       <label for="ed" color: white> Education</label><br>
+       <input type = "checkbox" name = "hu" id = "hu" />
+       <label for="hu" color: white> Hurricanes</label><br>
+       <input type = "checkbox" name = "nu" id = "nu" />
+       <label for="nu" color: white> Nutrition</label><br>
+       <input type = "checkbox" name = "blm" id = "blm" />
+       <label for="blm" color: white> Black Lives Matter</label><br>
+       <input type = "checkbox" name = "co" id = "co" />
+       <label for="co" color: white> Coronavirus</label><br>
+       <input type = "checkbox" name = "efg" id = "efg" />
+       <label for="efg" color: white> Equality For Girls</label><br>
+       <input type = "checkbox" name = "im" id = "im" />
+       <label for="im" color: white> Immunizations</label><br>
+       <input type = "checkbox" name = "lr" id = "lr" />
+       <label for="lr" color: white> LGBTQ+Rights</label><br>
+       
+
+           <button class="hello" id = "submit" type="submit" >Submit</button>
+      
+       <br>
+       <form action="/preferences.html" method="get">
+           <button class="hello" type="submit">Go Back</button>
+       </form>  
+       
+       </div>
+       
+      </form>
+      </div>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-firestore.js"></script>
+    <script>
+       // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAIbUT5awOe4Vc2f4LN07GkqhZfd8PwJAo",
+    authDomain: "fir-f1ea0.firebaseapp.com",
+    databaseURL: "https://fir-f1ea0.firebaseio.com",
+    projectId: "fir-f1ea0",
+    storageBucket: "fir-f1ea0.appspot.com",
+    messagingSenderId: "881456093918",
+    appId: "1:881456093918:web:b4b44fe4f1ce393fa2804f",
+    measurementId: "G-HNDNCZZGXK"
+  };
+      firebase.initializeApp(firebaseConfig);
+  var firestore = firebase.firestore();
+
+  const submitBtn = document.querySelector("#submit");
+  let userZip= document.querySelector("#userZipCode");
+  let animal = document.querySelector("ar");
+  let childt = document.querySelector("ct");
+                                      
+  
+const db = firestore.collection("contactInfo");
+
+document.getElementById("submit").addEventListener("click", function(){
+//submitBtn.addEventListener("click", function() {
+ let userZipInput= userZip.value;
+ let animalInput = animal.value;
+ let childInput = childt.value;
+ 
+
+//Access Database
+db.doc()
+  .set({
+ zipcode: userZipInput,
+ animal: animalInput,
+ child: childInput
+})
+.then(function() {
+ console.log("Data Saved");
+  })
+.catch(function(error) {
+ console.log(error);
+});
+});
+
+    </script>
+    
+  </body>
+  
+</html>
