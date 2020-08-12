@@ -56,6 +56,6 @@ Try it out
 https://actibridge.glitch.me/
 
 
-Devpost Submission:
+Devpost Submission: 
 
 https://devpost.com/software/actibridge-cqrdtu
